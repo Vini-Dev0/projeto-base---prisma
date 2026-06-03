@@ -3,15 +3,15 @@ import routes from "./routes.js";
 
 class App {
   constructor() {
-    this.app = express;
+    this.app = express();
     this.middlewares();
     this.routes();
   }
   middlewares() {
-    this.app.request(express.json());
+    this.app.use(express.json());
   }
   routes() {
-    this.app.request(routes);
+    this.app.use(routes);
   }
 }
 
